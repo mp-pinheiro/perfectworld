@@ -266,14 +266,21 @@ services:
 
 volumes:
   perfectworld-mysql-volume:
-    external:
-      name: /mnt/pw/mysql
+    driver_opts:
+      type: none
+      device: /mnt/pw/mysql
+      o: bind
+    
   perfectworld-dbhomewdb-volume:
-    external:
-      name: /mnt/pw/dbhomewdb
+    driver_opts:
+      type: none
+      device: /mnt/pw/dbhomewdb
+      o: bind
   perfectworld-backupwdb-volume:
-    external:
-      name: /mnt/pw/backupwdb
+    driver_opts:
+      type: none
+      device: /mnt/pw/backupwdb
+      o: bind
  
 networks:
   infrastructure:
